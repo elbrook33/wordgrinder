@@ -110,7 +110,7 @@ local function redrawstatus()
 end
 		
 local topmarker = {
-	"     ▲          ▲          ▲          ▲          ▲     ",
+--	"     ▲          ▲          ▲          ▲          ▲     ",
 	"───────────────────────────────────────────────────────"
 }
 local topmarkerwidth = GetStringWidth(topmarker[1])
@@ -118,7 +118,8 @@ local topmarkerwidth = GetStringWidth(topmarker[1])
 local function drawtopmarker(y)
 	local x = int((ScreenWidth - topmarkerwidth)/2)
 	
-	SetBright()
+--	SetBright()
+	SetDim()
 	for i = #topmarker, 1, -1 do
 		if (y >= 0) then
 			Write(x, y, topmarker[i])
@@ -130,14 +131,15 @@ end
 
 local bottommarker = {
 	"───────────────────────────────────────────────────────",
-	"     ▼          ▼          ▼          ▼          ▼     ",
+--	"     ▼          ▼          ▼          ▼          ▼     ",
 }
 local bottommarkerwidth = GetStringWidth(bottommarker[1])
 
 local function drawbottommarker(y)
 	local x = int((ScreenWidth - bottommarkerwidth)/2)
 	
-	SetBright()
+--	SetBright()
+	SetDim()
 	for i = 1, #bottommarker do
 		if (y <= ScreenHeight) then
 			Write(x, y, bottommarker[i])

@@ -119,7 +119,7 @@ void dpy_start(void)
 	}
 
 	window = XCreateSimpleWindow(display, RootWindow(display, 0),
-					  0, 0, 800, 600, 0, 0, BlackPixel(display, 0));
+					  0, 0, 480, 500, 0, 0, BlackPixel(display, 0));
 	XStoreName(display, window, "WordGrinder " VERSION);
 	XSetClassHint(display, window,
 		&((XClassHint) { "WordGrinder", "WordGrinder" }));
@@ -259,10 +259,10 @@ static void redraw(void)
 	XftColor* c = &colours[COLOUR_BRIGHT];
 
 	XftDrawRect(draw, c, x,   y,   1, h);
-	XftDrawRect(draw, c, x-1, y-1, 1, 1);
-	XftDrawRect(draw, c, x+1, y-1, 1, 1);
-	XftDrawRect(draw, c, x-1, y+h, 1, 1);
-	XftDrawRect(draw, c, x+1, y+h, 1, 1);
+	//XftDrawRect(draw, c, x-1, y-1, 1, 1);
+	//XftDrawRect(draw, c, x+1, y-1, 1, 1);
+	//XftDrawRect(draw, c, x-1, y+h, 1, 1);
+	//XftDrawRect(draw, c, x+1, y+h, 1, 1);
 }
 
 uni_t dpy_getchar(int timeout)
